@@ -211,6 +211,7 @@ ul
     font-weight:600;
     color:#222222;
     transition:all linear 0.15s;
+    text-decoration:none;
 }
 
 .tab-links a:hover

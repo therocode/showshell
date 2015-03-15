@@ -35,9 +35,32 @@
                                                                                 document.getElementById('resize').checked)">
     </div>
 
-    <div class="information">
-        <h2>Gimgui element example</h2>
-        <p>This is some description text for what this thingy is. Pretty neat.</p>
+    <div class="tabs">
+        <ul class="tab-links">
+            <li class="active"><a href="#tab1">Tab #1</a></li>
+            <li><a href="#tab2">Tab #2</a></li>
+            <li><a href="#tab3">Tab #3</a></li>
+            <li><a href="#tab4">Tab #4</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="tab1" class="tab active">
+                <h2>GimGui example</h2>
+                <p>This is some description text for what this thingy is. Pretty neat.</p>
+            </div>
+
+            <div id="tab2" class="tab">
+                <p>code code code code</p>
+            </div>
+
+            <div id="tab3" class="tab">
+                <p>More code code code code code</p>
+            </div>
+
+            <div id="tab4" class="tab">
+                <p>Even more code code code code</p>
+            </div>
+        </div>
     </div>
     
     <div class="console-container">
@@ -67,6 +90,20 @@
                 //$('#arrow').removeClass('flipped');
             }   
         }); 
+
+    $(document).ready(function() {
+        $('.tabs .tab-links a').on('click', function(e)  {
+            var currentAttrValue = $(this).attr('href');
+
+            // Show/Hide Tabs
+            $('.tabs ' + currentAttrValue).show().siblings().hide();
+
+            // Change/remove current tab to active
+            $(this).parent('li').addClass('active').siblings().removeClass('active');
+
+            e.preventDefault();
+        });
+    });
     </script>
     <script type='text/javascript'>
       var statusElement = document.getElementById('status');
@@ -162,6 +199,7 @@
           if (text) Module.printErr('[post-exception status] ' + text);
         };
       };
+
     </script>
     {{{ SCRIPT }}}
     </div>

@@ -108,20 +108,6 @@ input[type=button]
     background-color: #222222;
 }
 
-.information
-{
-    background-color: #CCCCCC;
-    color: #222222;
-    width: 50%;
-    position: relative;
-    left: 25%;
-}
-
-.information p
-{
-    color: #222222;
-}
-
 .spinner
 {
 
@@ -188,4 +174,72 @@ input[type=button]
     {
         transform: rotate(360deg);
     }
+}
+
+/*tabs*/
+.tabs
+{
+    position: relative;
+    width:50%;
+    left: 25%;
+    display: inline-block;
+}
+
+.tabs p, .tabs h2
+{
+    color: #222222;
+}
+
+ul
+{
+    margin: 0px;
+}
+
+.tab-links li
+{
+    list-style: none;
+    display: inline-block;
+}
+
+.tab-links a
+{
+    padding:9px 15px;
+    display:inline-block;
+    border-radius:3px 3px 0px 0px;
+    background:#999999;
+    font-size:16px;
+    font-weight:600;
+    color:#222222;
+    transition:all linear 0.15s;
+}
+
+.tab-links a:hover
+{
+    background:#a7cce5;
+    text-decoration:none;
+}
+
+li.active a, li.active a:hover
+{
+    background:#CCCCCC;
+    color:#222222;
+}
+
+/*----- Content of Tabs -----*/
+.tab-content
+{
+    padding:15px;
+    border-radius:3px;
+    box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+    background-color: #CCCCCC;
+}
+
+.tab
+{
+    display:none;
+}
+
+.tab.active
+{
+    display:block;
 }

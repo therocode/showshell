@@ -1,0 +1,191 @@
+.emscripten
+{
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+div.console-container
+{
+    position: fixed;
+    bottom: -188px;
+    width: 100%;
+    pointer-events: none;
+}
+
+div.console-toggle
+{
+    padding: 3px;
+    position: relative;
+    top: 55px;
+    left: 10px;
+    background-color: #555;
+    display: inline-block;
+    border-radius: 20% 20% 0% 0%;
+    height: 80px;
+    cursor: default;
+    pointer-events: auto;
+}
+
+div.console-toggle:hover
+{
+    background-color: #666;
+}
+
+div.console-toggle p
+{
+    margin: 5px;
+    cursor: default;
+}
+
+textarea.console
+{
+    font-family: monospace;
+    width: 100%;
+    color: #999999;
+    background-color: #050505;
+    position: relative;
+    bottom: 0px;
+    border: 0px none;
+    border-top: 4px ridge #555;
+    resize: none;
+    height: 175px;
+    pointer-events: auto;
+}
+
+div.emscripten
+{
+    text-align: center;
+}
+
+div.emscripten_border
+{
+    width:800px;
+    border: 4px ridge #555;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* the canvas *must not* have any border or padding, or mouse coords will be wrong */
+canvas.emscripten
+{
+    border: 0px none;
+}
+
+html, body
+{
+    background-color: black;
+    margin: 0px;
+    height: 100%;
+}
+
+h1
+{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p, input, h1, div
+{
+    font-family: 'Oxygen';
+    color: #CCCCCC;
+}
+
+input[type=button]
+{
+    color: #000000;
+}
+
+.vignette
+{
+    color: #000000;
+    width: 100%;
+    padding-top: 40px;
+    -moz-box-shadow: inset 0 0 10em;
+    -webkit-box-shadow: inset 0 0 10em;
+    box-shadow: inset 0 0 10em;
+    background-color: #222222;
+}
+
+.information
+{
+    background-color: #CCCCCC;
+    color: #222222;
+    width: 50%;
+    position: relative;
+    left: 25%;
+}
+
+.information p
+{
+    color: #222222;
+}
+
+.spinner
+{
+
+    height: 50px;
+    width: 50px;
+    margin: 0px auto;
+    -webkit-animation: rotation 0.8s linear infinite;
+    -moz-animation: rotation 0.8s linear infinite;
+    -o-animation: rotation 0.8s linear infinite;
+    animation: rotation 0.8s linear infinite;
+    border-left: 10px solid rgb(0,150,240);
+    border-right: 10px solid rgb(0,150,240);
+    border-bottom: 10px solid rgb(0,150,240);
+    border-top: 10px solid rgb(100,0,200);
+    border-radius: 100%;
+    background-color: rgb(200,100,250);
+}
+
+@-webkit-keyframes rotation
+{
+
+    from
+    {
+        -webkit-transform: rotate(0deg);
+    }
+    to
+    {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes rotation
+{
+    from
+    {
+        -moz-transform: rotate(0deg);
+    }
+    to
+    {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes rotation
+{
+    from
+    {
+        -o-transform: rotate(0deg);
+    }
+    to
+    {
+        -o-transform: rotate(360deg);
+    }
+}
+
+@keyframes rotation
+{
+
+    from
+    {
+        transform: rotate(0deg);
+    }
+    to
+    {
+        transform: rotate(360deg);
+    }
+}

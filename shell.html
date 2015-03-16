@@ -81,7 +81,9 @@
             // Change/remove current tab to active
             $(this).parent('li').addClass('active').siblings().removeClass('active');
 
-            $("html, body").animate({ scrollTop: $(document).height() }, 500);
+            $("html, body").animate({
+                scrollTop: $('.tab-links').offset().top
+            }, 800);
 
             e.preventDefault();
         });

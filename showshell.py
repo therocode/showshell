@@ -50,25 +50,24 @@ def main(argv):
   tablist = []
 
   for line in content:
-    line = line.strip()
-    if line.startswith('{title:'):
-      title = line.strip('{title:').strip().strip('}')
+    if '{title:' in line:
+      title = line.strip().strip('{title:').strip().strip('}').strip()
       continue
 
-    if line == "{link}":
+    if '{link}' in line:
       linkstarted = True
       continue
 
-    if line == "{run}":
+    if '{run}' in line:
       runstarted = True
       continue
 
-    if line.startswith('{tab:'):
-      tabtitle = line.strip('{tab:').strip().strip('}')
+    if '{tab:' in line:
+      tabtitle = line.strip().strip('{tab:').strip().strip('}').strip()
       tabstarted = True
       continue
 
-    if line == "{end}":
+    if '{end}' in line:
       if (not linkstarted) and (not tabstarted) and (not runstarted):
         print "malformed config file. {end} found without starting {link}, {run} or {tab:NAME}"
         sys.exit(2)
@@ -97,8 +96,8 @@ def main(argv):
       continue
 
   template = template.replace("{{TITLE}}",title)
-  template = template.replace("{{RUN}}", ''.join(runlist))
-  template = template.replace("{{LINK}}", ''.join(dependencylist))
+  template = template.replace("{{RUN}}", '\n'.join(runlist))
+  template = template.replace("{{LINK}}", '\n'.join(dependencylist))
 
   tabstring = ''
   tabcontentstring = ''
@@ -109,7 +108,7 @@ def main(argv):
     tabtitle = tab[0]
     tabcontent = tab[1]
     tabstring += '<li' + extraclass + '><a href="#tab' + str(tabindex) + '">' + tabtitle + '</a></li>'
-    tabcontentstring += '<div id="tab' + str(tabindex) + '" class="tab' + extra + '">' + ''.join(tabcontent) + '</div>'
+    tabcontentstring += '<div id="tab' + str(tabindex) + '" class="tab' + extra + '">' + '\n'.join(tabcontent) + '</div>'
     tabindex += 1
     extra = ''
     extraclass = ''

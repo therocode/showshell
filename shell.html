@@ -6,9 +6,8 @@
     <title>{{TITLE}}</title>
     <link rel="stylesheet" type="text/css" href="shell.css">
     <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="sunburst.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="highlight.pack.js"></script>
+    {{LINK}}
   </head>
   <body>
     <div class="vignette">
@@ -39,30 +38,11 @@
 
     <div class="tabs">
         <ul class="tab-links">
-            <li class="active"><a href="#tab1">Info</a></li>
-            <li><a href="#tab2">Defining</a></li>
-            <li><a href="#tab3">Snippet 2</a></li>
-            <li><a href="#tab4">Snippet 3</a></li>
+            {{TABS}}
         </ul>
 
         <div class="tab-content">
-            <div id="tab1" class="tab active">
-                <h2>GimGui example</h2>
-                <p>This demo shows how you can create elements easily using GimGui.</p>
-            </div>
-
-            <div id="tab2" class="tab">
-                <p>A full GUI hierarchy can be created inline using the constructor of gim::Element.</p>
-                <pre><code>gim::Element mRoot;</code></pre>
-            </div>
-
-            <div id="tab3" class="tab">
-                <p>More code code code code code</p>
-            </div>
-
-            <div id="tab4" class="tab">
-                <p>Even more code code code code</p>
-            </div>
+            {{TABCONTENT}}
         </div>
     </div>
     
@@ -84,14 +64,10 @@
                 $('#console-tab-text').text('console');
                 Module.logCount = 0;
                 $console_container.animate({bottom: '-4px'}, 500);
-                //$('#menu').animate({right: '0px'}, 500);
-                //$('#arrow').addClass('flipped');
             }   
             else
             {   
                 $console_container.animate({bottom: '-188px'}, 500);
-                //$('#menu').animate({right: '-350px'}, 500);
-                //$('#arrow').removeClass('flipped');
             }   
         }); 
 
@@ -110,7 +86,7 @@
             e.preventDefault();
         });
 
-        hljs.initHighlightingOnLoad();
+        {{RUN}}
     });
     </script>
     <script type='text/javascript'>

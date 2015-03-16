@@ -108,7 +108,7 @@ def main(argv):
     tabtitle = tab[0]
     tabcontent = tab[1]
     tabstring += '<li' + extraclass + '><a href="#tab' + str(tabindex) + '">' + tabtitle + '</a></li>'
-    tabcontentstring += '<div id="tab' + str(tabindex) + '" class="tab' + extra + '">' + '\n'.join(tabcontent) + '</div>'
+    tabcontentstring += '<div id="tab' + str(tabindex) + '" class="tab' + extra + '">' + ''.join(tabcontent) + '</div>'
     tabindex += 1
     extra = ''
     extraclass = ''
